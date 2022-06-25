@@ -34,19 +34,19 @@ def sending(soldier):
 
 
     # 훈련병 정보에 맞게 값을 바꾸세요
-    if soldier=='최다운':
+    if soldier=='훈련병이름1':
         # Input Soldier Information
-        driver.find_element_by_css_selector('#searchName').send_keys('최다운') 
-        driver.find_element_by_css_selector('#birthYear').send_keys('1999')
-        driver.find_element_by_css_selector('#birthMonth').send_keys('09')
-        driver.find_element_by_css_selector('#birthDay').send_keys('21')
+        driver.find_element_by_css_selector('#searchName').send_keys('훈련병이름1') 
+        driver.find_element_by_css_selector('#birthYear').send_keys('생년')
+        driver.find_element_by_css_selector('#birthMonth').send_keys('생월')
+        driver.find_element_by_css_selector('#birthDay').send_keys('생일')
         driver.find_element_by_css_selector('#btnNext').click()
 
     else:
-        driver.find_element_by_css_selector('#searchName').send_keys('전인우') 
-        driver.find_element_by_css_selector('#birthYear').send_keys('1999')
-        driver.find_element_by_css_selector('#birthMonth').send_keys('07')
-        driver.find_element_by_css_selector('#birthDay').send_keys('25')
+        driver.find_element_by_css_selector('#searchName').send_keys('훈련병이름2') 
+        driver.find_element_by_css_selector('#birthYear').send_keys('생년')
+        driver.find_element_by_css_selector('#birthMonth').send_keys('생월')
+        driver.find_element_by_css_selector('#birthDay').send_keys('생일')
         driver.find_element_by_css_selector('#btnNext').click()
 
     # Click Search Soldier Button
@@ -176,7 +176,7 @@ for i in range(0,90):
     content = ''
     for j in range(0,30):
         content = content + "\n" +full[index + j]
-    sending('최다운')
+    sending('훈련병이름1')
     index = index + 30
 
 
@@ -184,7 +184,7 @@ for i in range(0,90):
     content = ''
     for j in range(0,30):
         content = content + "\n" +full[index + j]
-    sending('전인우')
+    sending('훈련병이름2')
     index = index + 30
 
 # 마지막까지 보낸 인덱스 저장
