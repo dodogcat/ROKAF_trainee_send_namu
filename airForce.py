@@ -130,7 +130,7 @@ if send_wiki== True:
             content = content.replace('style','')
 
             try:
-                out = sending('최다운')
+                out = sending('훈련병이름1')
                 if out:
                     print(content)
             except:
@@ -151,7 +151,7 @@ if send_wiki== True:
             content = content.replace('style','')
 
             try:
-                out = sending('전인우')
+                out = sending('훈련병이름2')
                 if out:
                     print(content)
             except:
