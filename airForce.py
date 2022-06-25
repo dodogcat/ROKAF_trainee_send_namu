@@ -33,6 +33,7 @@ def sending(soldier):
     driver.implicitly_wait(10)  
 
 
+    # 훈련병 정보에 맞게 값을 바꾸세요
     if soldier=='최다운':
         # Input Soldier Information
         driver.find_element_by_css_selector('#searchName').send_keys('최다운') 
@@ -62,10 +63,10 @@ def sending(soldier):
 
     # Default Address is Soldier Himself
     driver.switch_to.window(driver.window_handles[1])
-    driver.find_element_by_css_selector('.popSearchInput').send_keys("아리랑로 19다길 38-15")
+    driver.find_element_by_css_selector('.popSearchInput').send_keys("자기 집주소")
     driver.find_element_by_xpath("/html/body/form[2]/div/div/div[1]/div[1]/fieldset/span/input[2]").click()
     driver.find_element_by_xpath("/html/body/form[2]/div/div/div[1]/div[2]/table/tbody/tr[1]/td[2]/a/div/div").click()
-    driver.find_element_by_css_selector('#rtAddrDetail').send_keys("2")
+    driver.find_element_by_css_selector('#rtAddrDetail').send_keys("세부주소")
     driver.find_element_by_css_selector('.btn-bl').click()
 
     # Input Letter Contents
@@ -88,7 +89,7 @@ def sending(soldier):
         return True
 
 def randomFromNamu():
-    conn = pymysql.connect(host='127.0.0.1', user='root', password='!tnthd001', db='namu', charset='utf8mb4')
+    conn = pymysql.connect(host='127.0.0.1', user='root', password='암호', db='namu', charset='utf8mb4')
 
     cur = conn.cursor()
 
@@ -111,14 +112,6 @@ def randomFromNamu():
     return row[1], row[2]
 
     
-
-
-
-# randomFromNamu()
-
-# test = '#redirect 리인액트먼트#s-5.2\n'
-# print(len(test))
-
 send_wiki = True
 
 if send_wiki== True:
@@ -168,6 +161,7 @@ if send_wiki== True:
 
     exit()
 
+# 이 부분은 난중일기를 보내는 부분
 f = open("G:\내 드라이브\군머\난중일기.txt", 'r', encoding="UTF-8")
 index_text = open("G:\내 드라이브\군머\index.txt", 'r')
 index = int(index_text.read())
@@ -193,7 +187,7 @@ for i in range(0,90):
     sending('전인우')
     index = index + 30
 
-
+# 마지막까지 보낸 인덱스 저장
 end = open("G:\내 드라이브\군머\index.txt", 'w')
 end.write(str(index))
 end.close()
